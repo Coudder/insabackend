@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Helpers\JwtAuth; ///cargamos el helper
+use App\Helpers\JwtAuthu;
 
 class JwtAuthServiceProvider extends ServiceProvider
 {
