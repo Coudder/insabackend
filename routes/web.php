@@ -15,7 +15,7 @@
 use App\Http\Middleware\ApiAuthMiddleware;
 
 //RUTAS DE PRUEBA
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
