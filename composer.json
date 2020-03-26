@@ -43,7 +43,7 @@
             "database/factories"
         ],
         "files": [
-            "app/helpers/*.php"
+            "app/helpers/JwtAuth.php"
         ]
     },
     "autoload-dev": {
