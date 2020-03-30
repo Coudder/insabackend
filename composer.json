@@ -41,10 +41,8 @@
         "classmap": [
             "database/seeds",
             "database/factories"
-        ],
-        "files": [
-            "app/helpers/JwtAuth.php"
         ]
+        
     },
     "autoload-dev": {
         "psr-4": {
