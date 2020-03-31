@@ -224,7 +224,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'JwtAuth'=> App\Helpers\JwtAuth::class,
+        'JwtAuth'=> App\Helpers\JwtAuth::class, 
         'JwtAuthu'=> App\Helpers\JwtAuthu::class,
 
     ],
