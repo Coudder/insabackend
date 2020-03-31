@@ -175,7 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\JwtAuthServiceProvider::class,
-        App\Providers\JwtAuthuServiceProvider::class, //provider de unidades
+        //provider de unidades
+        App\Providers\JwtAuthuServiceProvider::class, 
     ],
 
     /*
