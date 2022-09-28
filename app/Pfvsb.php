@@ -28,3 +28,4 @@ class Pfvsb extends Model
         return $this->belongsTo('App\Jurisdiccion', 'jurisdiccion_id');
     }
 }
+ 
