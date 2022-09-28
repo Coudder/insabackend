@@ -12,4 +12,10 @@ class Citologia extends Model
     public function unidades(){
         return $this->belongsTo('App\Unidades', 'unidad_id');
     }
+
+//  public function  responsable(){
+  //      return this->belongsTo('App/Responsables', 'responsable_id')
+   // }
+    
+   //ejemplo para responsables coordinadores y jurisdiccion tablas
 }

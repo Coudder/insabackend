@@ -72,7 +72,8 @@ class DeteccionesController extends Controller
 
             //validamos los datos enviados
             $validate = \Validator::make($params_array, [
-                'unidad_id'         => 'required|unique:detecciones',
+                'unidad_id'         => 'required', //detalle arreglo de años para todos
+              //  'unidad_id'         => 'required|unique:detecciones', //intento quitar unique y poner año unico
                 'meta_detecciones'  => 'required|numeric',
                 // 'enero'             => 'numeric',
                 // 'febrero'           => 'numeric',
@@ -87,7 +88,11 @@ class DeteccionesController extends Controller
                 // 'noviembre'         => 'numeric',
                 // 'diciembre'         => 'numeric',
                 // 'total_det'         => 'numeric',
-                'ano'               => 'numeric'
+                'ano'               => 'required|numeric'
+
+                //NO PUIEDE SER UNICO PORQUE SOLO ME ACEPTARIA UN AÑO POR UNIDAD SI PONGO 2020 EN DOS UNIDADES NO ME ACEPTARIA
+                //PORQUE EL NUMERO DEBE SER UNICO, POR LO TANTO QUEDA SIN UNIQUE PARA QUE ACEPTEW LA INFORMACION, Y MEJOR
+                //VALIDARLA EN EL FRONT END SI ESE NUMERO YA LO TIENE QUE MANDE MENSAJE DE QUE YA EXISTE ESE AÑO EN META
             ]);
 
             //comprobamos si los datos se validaros correctamente
@@ -99,19 +104,29 @@ class DeteccionesController extends Controller
                     'message' => 'Los datos no se han validado correctamente'
                 ];
             }else{
+
+
+              
                 //si la validacion es correcta guardamos en la bd la nueva inform de cito
                 $det_info = new Deteccion();
                 $det_info -> unidad_id        = $params -> unidad_id;
                 $det_info -> meta_detecciones = $params -> meta_detecciones;
                 $det_info -> ano              = $params -> ano;
 
-                $det_info -> save();
 
-                $data = [
-                    'code'             => 200,
-                    'status'           => 'success',
-                    'detInfo'          => $det_info
-                ];
+             
+
+                    $det_info -> save();
+
+                    $data = [
+                        'code'             => 200,
+                        'status'           => 'success',
+                        'detInfo'          => $det_info
+                    ];
+
+             
+
+              
             }
 
         }else { //else  si no se reciben los datos correctamente
